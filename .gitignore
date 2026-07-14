@@ -1,0 +1,10 @@
+# Environment
+.env
+
+# Homepage runtime data (generated at container startup)
+config/logs/
+config/.env
+
+# OS
+.DS_Store
+Thumbs.db

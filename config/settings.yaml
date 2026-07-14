@@ -1,0 +1,22 @@
+---
+title: Homelab Dashboard
+description: My dashboard
+
+theme: dark
+color: slate
+
+layout:
+  Services:
+    style: row
+    columns: 3
+  Bookmarks:
+    style: row
+    columns: 3
+
+favicon: /images/arca-logo.png
+
+headerStyle: underlined
+fullWidth: false
+
+hideVersion: true
+disableUpdateCheck: true

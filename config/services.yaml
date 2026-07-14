@@ -1,0 +1,47 @@
+---
+- Services:
+    - Palworld:
+        icon: https://mmonster.co/media/a5/9a/5c/1747356485/icon-palworld-colored.svg
+        href: http://100.126.25.91:8212/
+        description: Servidor Palworld
+        ping: 100.126.25.91
+        server: homelab
+        container: palworld-server
+        widget:
+          type: customapi
+          url: http://100.126.25.91:8212/v1/api/players
+          username: admin
+          password: "{{HOMEPAGE_VAR_PALWORLD_PASSWORD}}"
+          mappings:
+            - field: players
+              label: Online
+              format: size
+    - Palworld Dashboard:
+        icon: https://mmonster.co/media/a5/9a/5c/1747356485/icon-palworld-colored.svg
+        href: http://100.126.25.91:8091/
+        description: Painel web do servidor Palworld
+        ping: 100.126.25.91
+        server: homelab
+        container: palworld-dashboard
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: http://100.126.25.91:3001/
+        description: Monitoramento de disponibilidade
+        ping: 100.126.25.91
+        server: homelab
+        container: uptime-kuma
+    - Homarr:
+        icon: homarr.png
+        href: http://100.126.25.91:7575/
+        description: Dashboard alternativo
+        ping: 100.126.25.91
+        server: homelab
+        container: homarr
+    - Beszel:
+        icon: beszel.png
+        href: http://100.126.25.91:8090/
+        description: Monitoramento de recursos do servidor
+        ping: 100.126.25.91
+        server: homelab
+        # Container criado via docker-compose sem nome customizado.
+        container: competent_glenn-main_app-1

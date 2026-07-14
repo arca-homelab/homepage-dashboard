@@ -1,0 +1,17 @@
+---
+- Developer:
+    - GitHub:
+        - icon: https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg
+          href: https://github.com/arca-homelab/
+
+    - Homepage Docs:
+        - icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/homepage.webp
+          href: https://gethomepage.dev/
+
+- Monitoring:
+    - Beszel:
+        - icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/beszel.webp
+          href: http://100.126.25.91:8090//
+    - Uptime Kuma:
+        - icon: https://uptime.kuma.pet/img/icon.svg
+          href: http://100.126.25.91:3001/

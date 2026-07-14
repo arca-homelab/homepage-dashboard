@@ -1,0 +1,25 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Homepage must run as root to read /var/run/docker.sock directly
+      # (see https://gethomepage.dev/configs/docker/). This overrides the
+      # PUID/PGID defaults in .env, which no longer apply to this container.
+      PUID: 0
+      PGID: 0
+      TZ: ${TZ:-UTC}
+      HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS:-localhost:3000}
+      HOMEPAGE_VAR_PALWORLD_PASSWORD: ${PALWORLD_PASSWORD}
+    volumes:
+      - ./config:/app/config
+      - ./images:/app/public/images
+      # Lets Homepage read container status/labels from the local Docker daemon
+      # (homepage runs on the same "homelab" host as the containers it monitors).
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Host disks exposed read-only so the resources widget can report their usage.
+      - /:/host:ro
+      - /mnt/storage:/mnt/storage:ro
